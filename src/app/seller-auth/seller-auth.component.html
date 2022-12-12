@@ -1,0 +1,46 @@
+<div *ngIf="!showLogin" class="container">
+    <form #sellerSignUp="ngForm" (ngSubmit)="signUp(sellerSignUp.value)" class="row g-3 needs-validation" novalidate>
+        <div class="mb-3 mt-5">
+            <label for="validationCustom01" class="form-label">First name</label>
+            <input type="text" ngModel name="name" class="form-control" id="validationCustom01" value="Mark" required>
+        </div>
+        <div class="mb-3">
+            <label for="exampleFormControlInput1" class="form-label">Email address</label>
+            <input type="email" ngModel name="email" class="form-control" id="exampleFormControlInput1"
+                placeholder="name@example.com">
+        </div>
+        <div class="mb-3">
+            <label for="inputPassword2" class="form-label">Password</label>
+            <input type="password" ngModel name="password" class="form-control" id="inputPassword2"
+                placeholder="Password">
+        </div>
+        <div class="col-12">
+            <button class="btn btn-primary">Sign Up</button>
+
+        </div>
+        <a class="cursor" (click)="openLogin()">Already Have account Click to login</a>
+    </form>
+</div>
+
+<!-- Login form -->
+
+<div *ngIf="showLogin" class="container">
+    <p>{{authError}}</p>
+    <form #sellerLogin="ngForm" (ngSubmit)="Login(sellerLogin.value)" class="row g-3 needs-validation" novalidate>
+
+        <div class="mb-3">
+            <label for="exampleFormControlInput1" class="form-label">Email address</label>
+            <input type="email" ngModel name="email" class="form-control" id="exampleFormControlInput1"
+                placeholder="name@example.com">
+        </div>
+        <div class="mb-3">
+            <label for="inputPassword2" class="form-label">Password</label>
+            <input type="password" ngModel name="password" class="form-control" id="inputPassword2"
+                placeholder="Password">
+        </div>
+        <div class="col-12">
+            <button class="btn btn-primary">Login</button>
+        </div>
+        <a class="cursor" (click)="openSignUp()">Don't Have account Click to Sign-Up</a>
+    </form>
+</div>

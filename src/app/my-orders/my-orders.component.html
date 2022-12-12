@@ -1,0 +1,29 @@
+<div class="container mt-5">
+    <table class="table table-bordered">
+        <thead>
+            <tr class="table-primary">
+                <th scope="col">Order</th>
+                <th scope="col">Order Id</th>
+                <th scope="col">Price</th>
+                <th scope="col">Status</th>
+                <th>Action</th>
+    
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let order of orderData">
+        
+                <td><img src="" alt="imageUrl not found"/></td>
+                <td>{{order.id}}</td>
+                <td>{{order.totalPrice}}</td>
+                <td>In Process</td>
+                <td>
+                    <button (click)="cancelOrder(order.id)" type="button" class="btn btn-dark">Cancel Order</button>
+                </td>
+                
+                <!-- <td><button (click)="deleteProduct(item.id)" type="button" class="btn btn-danger">Delete</button></td> -->
+            </tr>
+    
+        </tbody>
+    </table>
+    </div>

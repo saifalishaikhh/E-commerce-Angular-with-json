@@ -1,0 +1,20 @@
+<div class="container">
+    <div class="card mb-3 mt-3" style="max-width: 540px;" *ngFor="let item of searchResult">
+        <div class="row g-0">
+            <div class="col-md-4">
+                <a routerLink="/product-details/{{item.id}}">
+                    <img src="{{item.imageUrl}}" class="img-fluid rounded-start" alt="...">
+                </a>
+            </div>
+            <div class="col-md-8">
+                <div class="card-body">
+                    <h5 class="card-title"><a routerLink="/product-details/{{item.id}}">{{item.name}}</a></h5>
+                    <p class="card-text">Price : {{item.price}}</p>
+                    <p class="card-text">Color : {{item.color}}</p>
+                    <p class="card-text">Category : {{item.category}}</p>
+                    <p class="card-text">{{item.description}}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

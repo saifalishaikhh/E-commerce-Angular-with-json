@@ -1,0 +1,35 @@
+<div  class="container">
+    <div class="d-flex justify-content-center mb-2 mt-5"><h1>Update product</h1></div>
+    <div *ngIf="sucessBar" class="bg-success p-2 text-dark bg-opacity-50"><p>{{productMessage}}</p></div><form #AddProduct="ngForm" (ngSubmit)="updateProducts(AddProduct.value)" class="row g-3 needs-validation" novalidate>
+        <div class="mb-3 mt-3">
+            <label for="validationCustom01" class="form-label">Enter Product Name</label>
+            <input type="text" ngModel="{{productData?.name}}" name="name" class="form-control" id="validationCustom01" value="Mark" required>
+        </div>
+        <div class="mb-3 mt-2">
+            <label for="validationCustom01" class="form-label">Enter Product Price</label>
+            <input type="text" ngModel="{{productData?.price}}"  name="price" class="form-control" id="validationCustom01" value="Mark" required>
+        </div>
+        <div class="mb-3 mt-2">
+            <label for="validationCustom01" class="form-label">Enter Product Color</label>
+            <input type="text" ngModel="{{productData?.color}}"  name="color" class="form-control" id="validationCustom01" value="Mark" required>
+        </div>
+        <div class="mb-3 mt-2">
+            <label for="validationCustom01" class="form-label">Enter Product Category</label>
+            <input type="text" ngModel="{{productData?.category}}"  name="category" class="form-control" id="validationCustom01" value="Mark" required>
+        </div>
+        <div class="mb-3 mt-2">
+            <label for="validationCustom01" class="form-label">Enter Product Description</label>
+            <input type="text" ngModel="{{productData?.description}}"  name="description" class="form-control" id="validationCustom01" value="Mark" required>
+        </div>
+        <div class="mb-3 mt-2">
+            <label for="validationCustom01" class="form-label">Enter Product Image URl</label>
+            <input type="text" ngModel="{{productData?.imageUrl}}"  name="imageUrl" class="form-control" id="validationCustom01" value="Mark" required>
+        </div>
+        
+        
+        <div class="col-12">
+            <button class="btn btn-primary">Update Product</button>
+
+        </div>
+    </form>
+</div>

@@ -1,0 +1,40 @@
+
+<div class="container">
+<div class="row g-3 mt-5 ms-5 mr-5">
+    <div class="col">
+        <div class="container">
+            <h2 class="text-center mt-3">Checkout</h2>
+            <p class="text-center text-success"><b>{{orderMsg}}</b></p>
+            <form #orderdata="ngForm" (ngSubmit)="orderNow(orderdata.value)" class="row g-3 needs-validation" novalidate>
+        
+                <div class="mb-3">
+                    <label for="exampleFormControlInput1" class="form-label">Email address</label>
+                    <input type="email" ngModel name="email" class="form-control" id="exampleFormControlInput1"
+                        placeholder="name@example.com" />
+                </div>
+                <div class="mb-3 mt-5">
+                    <label for="validationCustom01" class="form-label">Enter your address</label>
+                    <input type="text" ngModel name="address" placeholder="address" class="form-control" id="validationCustom01"
+                        value="Mark" required />
+                </div>
+                <div class="mb-3">
+                    <label for="validationCustom01" class="form-label">Enter contact details</label>
+                    <input type="text" ngModel name="contact" class="form-control" id="inputPassword2" placeholder="contact" />
+                </div>
+                <div class="col-12">
+                    <button class="btn btn-primary">Order now</button>
+                </div>
+        
+            </form>
+        
+        </div>
+    </div>
+    <div class="col ms-5 mt-5">
+        <div class="container mt-3">
+            <h2>Total Amount : {{totalPrice}}</h2>
+            <h3>Payment method :<b>Cash on Delivary</b></h3>
+        </div>
+        
+    </div>
+</div>
+</div>

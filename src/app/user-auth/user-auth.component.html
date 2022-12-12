@@ -1,0 +1,51 @@
+<div *ngIf="!showLogin" class="container">
+    <h2 class="text-center mt-3">User signUp</h2>
+    <form #sellerSignUp="ngForm" (ngSubmit)="signUp(sellerSignUp.value)" class="row g-3 needs-validation" novalidate>
+        <div class="mb-3 mt-5">
+            <label for="validationCustom01" class="form-label">First name</label>
+            <input type="text" ngModel name="name" class="form-control" id="validationCustom01" value="Mark" required />
+        </div>
+        <div class="mb-3">
+            <label for="exampleFormControlInput1" class="form-label">Email address</label>
+            <input type="email" ngModel name="email" class="form-control" id="exampleFormControlInput1"
+                placeholder="name@example.com" />
+
+        </div>
+        <div class="mb-3">
+            <label for="inputPassword2" class="form-label">Password</label>
+            <input type="password" ngModel name="password" class="form-control" id="inputPassword2"
+                placeholder="Password" />
+        </div>
+        <div class="col-12">
+            <button class="btn btn-primary">Sign Up</button>
+        </div>
+        <a (click)="openLogin()">Already Have account Click to login</a>
+    </form>
+</div>
+
+
+<div class="container" *ngIf="showLogin">
+    <!-- <p>{{authError}}</p> -->
+    <h2 class="text-center mt-3">User Login</h2>
+    <p class="text-danger"><span >{{authError}}</span></p>
+    <form #userLogin="ngForm" (ngSubmit)="loginUser(userLogin.value)" class="row g-3 needs-validation" novalidate>
+
+        <div class="mb-3">
+            <label for="exampleFormControlInput1" class="form-label">Email address</label>
+            <input #email="ngModel" required type="email" email ngModel name="email" class="form-control" id="exampleFormControlInput1"
+                placeholder="name@example.com">
+                <p class="text-danger"><span *ngIf="email.invalid &&email.touched">Please enter valid value</span></p>
+               
+        </div>
+        <div class="mb-3">
+            <label for="inputPassword2" class="form-label">Password</label>
+            <input type="password" minlength="3" maxlength="10" ngModel #pssword="ngModel"  required name="password" class="form-control" id="inputPassword2"
+                placeholder="Password">
+                <p class="text-danger"><span *ngIf="pssword.invalid &&pssword.touched">Please enter valid value</span></p>
+        </div>
+        <div class="col-12">
+            <button class="disabled" [disabled]="userLogin.invalid" class="btn btn-primary">Login</button>
+        </div>
+        <a  (click)="openSignUp()">Don't Have account Click to Sign-Up</a>
+    </form>
+</div>
